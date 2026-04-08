@@ -1,0 +1,7 @@
+services:
+  httpbin:
+    image: kennethreitz/httpbin
+    expose:
+      - "80"
+    networks:
+      - ${NETWORK_NAME}

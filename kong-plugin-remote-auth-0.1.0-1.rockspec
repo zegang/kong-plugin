@@ -1,4 +1,4 @@
-local plugin_name = "myplugin"
+local plugin_name = "remote-auth"
 local package_name = "kong-plugin-" .. plugin_name
 local package_version = "0.1.0"
 local rockspec_revision = "1"
@@ -32,6 +32,7 @@ build = {
   type = "builtin",
   modules = {
     -- TODO: add any additional code files added to the plugin
+    ["kong.plugins."..plugin_name..".utils"] = "kong/plugins/"..plugin_name.."/utils.lua",
     ["kong.plugins."..plugin_name..".handler"] = "kong/plugins/"..plugin_name.."/handler.lua",
     ["kong.plugins."..plugin_name..".schema"] = "kong/plugins/"..plugin_name.."/schema.lua",
   }
